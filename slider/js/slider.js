@@ -1,5 +1,5 @@
 var sliderInt = 1;
-var sliderInt = 2;
+var sliderNext = 2;
 
 $(document).ready(function(){
 	$("#slider > img#1").fadeIn(300);
@@ -10,5 +10,8 @@ function startSlider(){
 	var count = $("#slider > img").size();
 	var loop = setInterval(function(){
 		$("#slider > img").fadeOut(300);
+		$("#slider > img#" + sliderNext).fadeIn(300);
+		sliderInt = sliderNext;
+		sliderNext = sliderNext +1;
 	}, 3000);
 }
